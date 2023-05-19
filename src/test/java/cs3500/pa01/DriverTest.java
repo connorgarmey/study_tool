@@ -1,15 +1,11 @@
 package cs3500.pa01;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import org.junit.jupiter.api.Test;
-
+/**
+ * Class for testing the Driver method
+ */
 class DriverTest {
 
-  @Test
-  public void fakeTest() {
-    System.out.println("An important message...");
-    assertEquals(5, 5);
-  }
-
 }
+
+
+

@@ -1,15 +1,24 @@
 package cs3500.pa01;
 
+import java.io.IOException;
+
+
 /**
  * This is the main driver of this project.
  */
 public class Driver {
   /**
-   * Project entry point
    *
-   * @param args - no command line args required
+   * @param args  Directory location, ordering flag, new File location
    */
   public static void main(String[] args) {
-    System.out.println("Hello from PA01 Template Repo");
+    if (args.length == 3) {
+      new StudyGuideController(args);
+    } else {
+      new QuestionController();
+    }
+
+
+
   }
 }
