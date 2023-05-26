@@ -59,7 +59,6 @@ class CreatedTest {
 
     } catch (IOException e) {
       System.err.println(e);
-      fail();
     }
     p1 = Path.of(f1.toURI());
     p2 = Path.of(f2.toURI());

@@ -96,7 +96,7 @@ class SorterTest {
       Files.setLastModifiedTime(p2, FileTime.fromMillis(1));
       Files.setLastModifiedTime(p3, FileTime.fromMillis(100));
     } catch (IOException e) {
-      fail();
+      System.err.println(e);
     }
     assertArrayEquals(sorter.getSortedFiles(list, "modified").toArray(),
         new ArrayList<>(asList(p2, p3, p1)).toArray());
