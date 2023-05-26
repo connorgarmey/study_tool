@@ -28,8 +28,6 @@ class SorterTest {
   Path p2;
   Path p3;
   Comparator<Path> comp;
-  Path fake;
-  Path fake2;
   File f1;
   File f2;
   Path cp1;
@@ -48,14 +46,13 @@ class SorterTest {
     p2 = Path.of("src/test/resources/exampleDirectory/oodNotes/io.md");
     p3 = Path.of("src/test/resources/exampleDirectory/oodNotes/vectors.md");
     list = new ArrayList<>(asList(p1, p2, p3));
-
     comp = new Created();
-    fake = Path.of("src/test/resources/exampleDirectory/oodNotes/fake.md");
-    fake2 = Path.of("src/test/resources/exampleDirectory/oodNotes/fake2.md");
+
     f1 = null;
     f2 = null;
 
     try {
+
       f1 = File.createTempFile("connor1",
           ".md", new File("src/test/resources/exampleDirectory/Test1"));
       f2 = File.createTempFile("connor2",
@@ -107,6 +104,7 @@ class SorterTest {
    */
   @Test
   public void testCreated() {
+
     assertArrayEquals(sorter.getSortedFiles(
             new ArrayList<>(asList(cp1, cp2)), "created").toArray(),
         new ArrayList<>(asList(cp1, cp2)).toArray());

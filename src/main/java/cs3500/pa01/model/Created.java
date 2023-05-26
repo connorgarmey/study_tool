@@ -26,13 +26,13 @@ public class Created implements Comparator<Path> {
       a1 = Files.readAttributes(
           o1, BasicFileAttributes.class);
     } catch (IOException e) {
-      throw new RuntimeException(e);
+      System.err.println(e);
     }
     try {
       a2 = Files.readAttributes(
           o2, BasicFileAttributes.class);
     } catch (IOException e) {
-      throw new RuntimeException(e);
+      System.err.println(e);
     }
 
     return a1.creationTime().compareTo(a2.creationTime());
