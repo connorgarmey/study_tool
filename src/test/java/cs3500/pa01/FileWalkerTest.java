@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import cs3500.pa01.controller.FileWalker;
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
@@ -29,13 +30,13 @@ class FileWalkerTest {
    */
   @BeforeEach
   public void initData() {
-    dir = "src/test/Resources/ExampleDirectory/OODNotes";
+    dir = "src/test/resources/exampleDirectory/oodNotes";
     //badDir = Path.of("src/test/Resources/ExampleDirectory/Bad");
     directory = Path.of(dir);
     try {
       da = Files.readAttributes(directory, BasicFileAttributes.class);
     } catch (IOException e) {
-      throw new RuntimeException();
+      System.out.println("Bad file path");
     }
 
 
@@ -58,20 +59,16 @@ class FileWalkerTest {
     ArrayList<Path> expectedFiles = new ArrayList<>();
     expectedFiles.add(Path.of(dir + "/arrays.md"));
     expectedFiles.add(Path.of(dir + "/io.md"));
+    expectedFiles.add(Path.of(dir + "/someQuestions.md"));
     expectedFiles.add(Path.of(dir + "/vectors.md"));
+
 
     // get list of traversed Markdown file paths
     ArrayList<Path> actualFiles = mfv.getFiles("filename");
 
     // compare both lists
-    assertEquals(3, actualFiles.size());
+    assertEquals(4, actualFiles.size());
     assertArrayEquals(expectedFiles.toArray(), actualFiles.toArray());
-/*
-    assertThrows(
-        RuntimeException.class,
-        () -> Files.walkFileTree(badDir, mfv));
-
- */
 
     assertEquals(FileVisitResult.CONTINUE, mfv.visitFile(directory, da));
     assertThrows(

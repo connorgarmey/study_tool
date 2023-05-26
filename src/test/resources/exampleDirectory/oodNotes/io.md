@@ -12,12 +12,8 @@ Streaming IO: Some program is sitting in the middle of bytes flowing towards it 
 System.err - stderr - connected to the systems standard error stream … a good place to send error messages
 
 
-
-### Why have both out and err?
-
-
-
-You [[don't want to torment your user with error messages]], maybe send them somewhere else like a torrent/file
+[[Why have both out and err? :::
+You don't want to torment your user with error messages]], maybe send them somewhere else like a torrent/file
 
 
 
@@ -28,10 +24,10 @@ You [[don't want to torment your user with error messages]], maybe send them som
 [[Able to store data that lives beyond the current execution]] of a program
 
 File can be of numerous different… meaning ways of interpreting the information stored on disk
-
-text (ASCII, UTF-8, etc.)
-mp4, wav
-jpeg, gif, png, svg… 
+[[What are some types of Files?:::
+tex: ASCII, UTF-8, etc... 
+mp4, wav, 
+jpeg, gif, png, svg…]]
 
  
 

@@ -1,0 +1,20 @@
+[[What is object-oriented programming (OOP)? ::: Object-oriented programming is a programming paradigm that organizes code into objects, which are instances of classes. It emphasizes concepts such as encapsulation, inheritance, and polymorphism.]]
+
+[[What is a class in Java? ::: In Java, a class is a blueprint or a template for creating objects. It defines the properties (attributes) and behaviors (methods) that objects of that class can have.]]
+
+[[What is encapsulation in Java? ::: Encapsulation is the mechanism in Java that bundles data (attributes) and methods (behaviors) together within a class, allowing access to the data only through the defined methods. It helps in achieving data hiding and abstraction.]]
+
+[[What is inheritance in Java? ::: Inheritance is a feature in Java that allows classes to inherit properties and methods from other classes. It promotes code reusability and establishes an "is-a" relationship between classes.]]
+
+[[What is polymorphism in Java? ::: Polymorphism is the ability of an object to take on different forms. In Java, polymorphism allows objects of different classes to be treated as objects of a common superclass, enabling methods to be invoked dynamically at runtime.]]
+
+[[What are the access modifiers in Java? ::: Java provides four access modifiers: public, protected, private, and the default (no modifier). They determine the accessibility of classes, methods, and variables in different contexts.]]
+
+[[What is an interface in Java? ::: An interface in Java defines a contract or a set of methods that a class implementing the interface must provide. It enables multiple inheritance-like behavior and supports abstraction.]]
+
+[[What is the difference between composition and inheritance? ::: Composition and inheritance are two ways to establish relationships between classes. Composition involves creating objects of other classes within a class, whereas inheritance involves deriving a class from a base class to inherit its properties and methods.]]
+
+[[What is the purpose of the super keyword in Java? ::: In Java, the super keyword is used to refer to the superclass (parent class) of a subclass. It is used to call the superclass's constructor or access its methods and variables.]]
+
+[[What are the SOLID principles in object-oriented design? ::: The SOLID principles are a set of design principles that aim to make software designs more understandable, flexible, and maintainable. They include Single Responsibility Principle, Open/Closed Principle, Liskov Substitution Principle, Interface Segregation Principle, and Dependency Inversion Principle.]]
+[[What's Dr. Fontenot's dog's name? ::: Winston]]

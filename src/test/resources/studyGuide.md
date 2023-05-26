@@ -1,7 +1,3 @@
-# Study Guide
-- by Connor Garmey
-- Welcome to the study guide
-
 # Java Arrays
 - An **array** is a collection of variables of the same type
 
@@ -21,14 +17,9 @@
 - System.out - stdout
 - connected to system’s standard output stream (usually some type of terminal)
 
-### Why have both out and err?
-- don't want to torment your user with error messages
-
 ## File I/O
 - Files - usually stored on non-volatile memory
 - Able to store data that lives beyond the current execution
-
-# Testing
 
 # Vectors
 - Vectors act like resizable arrays

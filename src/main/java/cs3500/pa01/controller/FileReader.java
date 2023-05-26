@@ -1,5 +1,6 @@
-package cs3500.pa01;
+package cs3500.pa01.controller;
 
+import cs3500.pa01.model.Filter;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import java.util.Scanner;
  */
 public class FileReader {
 
+
   /**
    * Reads the contents from a file to a String
    *
@@ -18,9 +20,8 @@ public class FileReader {
    *
    * @return the contents of the file
    */
-  private String readFromFile(Path path) {
-    // Initialize a Scanner to read the file
-    Scanner sc = null;
+  public String readFromFile(Path path) {
+    Scanner sc;
     try {
       sc = new Scanner(path);
     } catch (IOException e) {
@@ -35,19 +36,22 @@ public class FileReader {
     return content.toString();
   }
 
+
   /**
    * Goes through each file, reads it, and filters and formats the text
    *
    * @param files a list of all the file paths
    * @return all of the filtered text
    */
-  public String readFiles(ArrayList<Path> files) {
+  public String[] readFiles(ArrayList<Path> files) {
     StringBuilder s = new StringBuilder();
     for (Path p : files) {
       s = new StringBuilder(s + this.readFromFile(p));
     }
-    PoundBracket f = new PoundBracket();
+    Filter f = new Filter();
     return f.drBracket(s.toString());
   }
+
+
 }
 

@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import cs3500.pa01.model.Created;
+import cs3500.pa01.model.Sorter;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;

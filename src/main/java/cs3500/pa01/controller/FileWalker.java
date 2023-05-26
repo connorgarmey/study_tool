@@ -1,7 +1,8 @@
-package cs3500.pa01;
+package cs3500.pa01.controller;
 
 import static java.nio.file.FileVisitResult.CONTINUE;
 
+import cs3500.pa01.model.Sorter;
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
 import java.nio.file.FileVisitor;

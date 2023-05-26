@@ -3,6 +3,8 @@ package cs3500.pa01;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import cs3500.pa01.controller.FileReader;
+import cs3500.pa01.controller.WriteFile;
 import java.io.File;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -27,7 +29,7 @@ class WriteFileTest {
    */
   @BeforeEach
   public void initData() {
-    newPath = Path.of("src/test/Resources/ExampleDirectory/testFile.md");
+    newPath = Path.of("src/test/resources/exampleDirectory/testFile.md");
     newFile = newPath.toFile();
     badPath = Path.of("");
     fw = new WriteFile();
@@ -43,9 +45,19 @@ class WriteFileTest {
   @Test
   public void testFileWriter() {
     fw.writeToFile(newFile, f1);
-    assertEquals("# Testing\n", fr.readFiles(f1));
+    assertEquals("# Testing\n", fr.readFiles(f1)[0]);
     assertThrows(
         RuntimeException.class,
         () -> fw.writeToFile(badPath.toFile(), f2));
+  }
+
+  @Test
+  public void testRewrite() {
+    this.initData();
+    fw.rewriteFile(fr.readFiles(f1)[0], newPath);
+    assertEquals("# Testing\n", fr.readFiles(f1)[0]);
+    assertThrows(
+        RuntimeException.class,
+        () -> fw.rewriteFile("Bad", badPath));
   }
 }

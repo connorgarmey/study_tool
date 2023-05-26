@@ -1,6 +1,8 @@
 package cs3500.pa01;
 
-import java.io.IOException;
+import cs3500.pa01.controller.QuestionController;
+import cs3500.pa01.controller.StudyGuideController;
+import java.util.Scanner;
 
 
 /**
@@ -15,7 +17,8 @@ public class Driver {
     if (args.length == 3) {
       new StudyGuideController(args);
     } else {
-      new QuestionController();
+      Scanner scan = new Scanner(System.in);
+      new QuestionController(scan, System.out);
     }
 
 

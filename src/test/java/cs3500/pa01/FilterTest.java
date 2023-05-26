@@ -3,6 +3,7 @@ package cs3500.pa01;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import cs3500.pa01.model.Filter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +18,7 @@ class FilterTest {
   String five;
   String six;
   String seven;
-  PoundBracket filter;
+  Filter filter;
 
   /**
    * initializes the data for testing
@@ -25,13 +26,16 @@ class FilterTest {
   @BeforeEach
   public void initData() {
     one = "The cat [and the dog";
-    two = "# The apple fell from the tree";
-    three = "The [[cat]] sat";
-    four = "[[The ho]use was large]]";
-    five = "Ooga booga]] booga";
-    six = "[[a b c d e";
-    seven = "[[1 2 3 \n 4 5";
-    filter = new PoundBracket();
+    two = "\n# The apple fell from the tree";
+    three = " [[This is very important]] blabla [[ This is a question \n"
+        + ":::answer]]";
+    four = """
+        Hi there[[The spider ran up \n::: the web]] #Header
+        dfijfbnd [[Keep reading\s
+         keep reading]]""";
+    five = '\n' + "[[A]]";
+    six = "[[Fake :: question]] [ important?]";
+    filter = new Filter();
   }
 
   /**
@@ -39,27 +43,35 @@ class FilterTest {
    */
   @Test
   public void testPound() {
-    assertEquals("", filter.drBracket(one));
-    assertEquals("# The apple fell from the tree\n", filter.drBracket(two));
+    assertEquals("", filter.drBracket(one)[0]);
+    assertEquals("# The apple fell from the tree\n", filter.drBracket(two)[0]);
   }
 
   /**
    * tests the filter for brackets and other cases
    */
   @Test
-  public void testFilter() {
-    assertEquals("", filter.drBracket(one));
-    assertEquals("- cat\n", filter.drBracket(three));
-    assertEquals("- The ho]use was large\n", filter.drBracket(four));
-    filter.keepReading = true;
-    assertEquals("The cat [and the dog", filter.drBracket(one));
-    assertEquals("Ooga booga\n", filter.drBracket(five));
-    filter.keepReading = false;
-    assertEquals("- a b c d e", filter.drBracket(six));
-    assertTrue(filter.keepReading);
-    filter.keepReading = false;
-    assertEquals("- 1 2 3  4 5", filter.drBracket(seven));
-
-
+  public void testBrackets() {
+    assertEquals("- This is very important\n", filter.drBracket(three)[0]);
+    filter = new Filter();
+    assertEquals("#Header\n- Keep reading  keep reading\n", filter.drBracket(four)[0]);
+    filter = new Filter();
+    assertEquals("- Fake :: question\n", filter.drBracket(six)[0]);
   }
+
+  @Test
+  public void testQuestions() {
+    assertEquals("", filter.drBracket(one)[1]);
+    assertEquals("", filter.drBracket(two)[1]);
+    assertEquals("-  This is a question \nanswer\n@HARD", filter.drBracket(three)[1]);
+    filter = new Filter();
+    assertEquals("- The spider ran up \n the web\n@HARD", filter.drBracket(four)[1]);
+  }
+
+  @Test
+  public void testRemoveIndent() {
+    assertEquals("- A\n", filter.drBracket(five)[0]);
+  }
+
+
 }

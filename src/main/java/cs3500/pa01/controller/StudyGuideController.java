@@ -1,4 +1,4 @@
-package cs3500.pa01;
+package cs3500.pa01.controller;
 
 import java.io.File;
 import java.io.IOException;
@@ -6,25 +6,39 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 
-public class StudyGuideController implements IController {
+/**
+ * Controller for the study guide mode
+ * of the program
+ */
+public class StudyGuideController implements Icontroller {
   String[] args;
-  StudyGuideController(String[] args) {
+
+  /**
+   *  StudyGuideController constructor
+   *
+   * @param args the terminal input
+   */
+  public StudyGuideController(String[] args) {
     this.args = args;
     this.runApp();
   }
 
+  /**
+   * Central method for reading and writing the
+   * study guide
+   */
   @Override
   public void runApp() {
-    //Path from = Path.of(args[0]);
+    Path from = Path.of(args[0]);
     File to = new File(args[2]);
     ArrayList<Path> files;
     FileWalker slay = new FileWalker();
     WriteFile wtf = new WriteFile();
 
     try {
-      Files.walkFileTree(Path.of(args[0]), slay);
+      Files.walkFileTree(from, slay);
     } catch (IOException e) {
-      throw new RuntimeException("Bad path");
+      System.out.println("Bad path");
     }
 
     files = slay.getFiles(args[1]);
