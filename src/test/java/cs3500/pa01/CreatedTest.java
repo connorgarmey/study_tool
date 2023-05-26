@@ -56,12 +56,12 @@ class CreatedTest {
       long number = 34239;
       FileTime time = FileTime.fromMillis(number);
       a1.setTimes(time, time, time);
+      p1 = Path.of(f1.toURI());
+      p2 = Path.of(f2.toURI());
 
     } catch (IOException e) {
       System.err.println(e);
     }
-    p1 = Path.of(f1.toURI());
-    p2 = Path.of(f2.toURI());
   }
 
   /**
