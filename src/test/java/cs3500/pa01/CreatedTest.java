@@ -36,8 +36,8 @@ class CreatedTest {
   @BeforeEach
   public void initData() {
     comp = new Created();
-    fake = Path.of("src/test/Resources/ExampleDirectory/OODNotes/fake.md");
-    fake2 = Path.of("src/test/Resources/ExampleDirectory/OODNotes/fake2.md");
+    fake = Path.of("src/test/resources/exampleDirectory/oodNotes/fake.md");
+    fake2 = Path.of("src/test/resources/exampleDirectory/oodNotes/fake2.md");
     f1 = null;
     f2 = null;
 

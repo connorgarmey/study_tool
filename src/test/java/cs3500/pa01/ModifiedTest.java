@@ -27,9 +27,9 @@ class ModifiedTest {
    */
   @BeforeEach
   public void initData() {
-    arrays = Path.of("src/test/Resources/ExampleDirectory/OODNotes/arrays.md");
-    vectors = Path.of("src/test/Resources/ExampleDirectory/OODNotes/vectors.md");
-    fake = Path.of("src/test/Resources/ExampleDirectory/OODNotes/fake.md");
+    arrays = Path.of("src/test/resources/exampleDirectory/oodNotes/arrays.md");
+    vectors = Path.of("src/test/resources/exampleDirectory/oodNotes/vectors.md");
+    fake = Path.of("src/test/resources/exampleDirectory/oodNotes/fake.md");
     comp = new Modified();
   }
 

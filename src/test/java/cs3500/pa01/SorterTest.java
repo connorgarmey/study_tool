@@ -44,22 +44,22 @@ class SorterTest {
   @BeforeEach
   public void initData() {
     sorter = new Sorter();
-    p1 = Path.of("src/test/Resources/ExampleDirectory/OODNotes/arrays.md");
-    p2 = Path.of("src/test/Resources/ExampleDirectory/OODNotes/io.md");
-    p3 = Path.of("src/test/Resources/ExampleDirectory/OODNotes/vectors.md");
+    p1 = Path.of("src/test/resources/exampleDirectory/oodNotes/arrays.md");
+    p2 = Path.of("src/test/resources/exampleDirectory/oodNotes/io.md");
+    p3 = Path.of("src/test/resources/exampleDirectory/oodNotes/vectors.md");
     list = new ArrayList<>(asList(p1, p2, p3));
 
     comp = new Created();
-    fake = Path.of("src/test/Resources/ExampleDirectory/OODNotes/fake.md");
-    fake2 = Path.of("src/test/Resources/ExampleDirectory/OODNotes/fake2.md");
+    fake = Path.of("src/test/resources/exampleDirectory/oodNotes/fake.md");
+    fake2 = Path.of("src/test/resources/exampleDirectory/oodNotes/fake2.md");
     f1 = null;
     f2 = null;
 
     try {
       f1 = File.createTempFile("connor1",
-          ".md", new File("src/test/Resources/ExampleDirectory/Test1"));
+          ".md", new File("src/test/resources/exampleDirectory/Test1"));
       f2 = File.createTempFile("stinky2",
-          ".md", new File("src/test/Resources/ExampleDirectory/Test2"));
+          ".md", new File("src/test/resources/exampleDirectory/Test2"));
       a1 = Files.getFileAttributeView(
           f1.toPath(), BasicFileAttributeView.class);
       a2 = Files.getFileAttributeView(

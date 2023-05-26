@@ -22,9 +22,9 @@ class FileNameTest {
    */
   @BeforeEach
   public void initData() {
-    arrays = Path.of("/src/test/resources/exampleDirectory/oodNotes/arrays.md");
-    vectors = Path.of("/src/test/resources/exampleDirectory/oodNotes/vectors.md");
-    io = Path.of("/src/test/resources/exampleDirectory/oodNotes/io.md");
+    arrays = Path.of("src/test/resources/exampleDirectory/oodNotes/arrays.md");
+    vectors = Path.of("src/test/resources/exampleDirectory/oodNotes/vectors.md");
+    io = Path.of("src/test/resources/exampleDirectory/oodNotes/io.md");
     comp = new FileName();
   }
 
