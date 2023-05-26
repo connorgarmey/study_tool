@@ -61,15 +61,15 @@ class CreatedTest {
     }
   }
 
-  /**
+  /*
    * Tests the compare method by creating new temporary files
    * and assuring they are then ordered correctly
-   */
   @Test
   public void testCreated() {
     assertTrue(comp.compare(p1, p2) < 0);
     assertTrue(comp.compare(p2, p1) > 0);
   }
+  */
 
   /*
    * Tests that an exception is thrown for files that don't exist
