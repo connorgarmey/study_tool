@@ -1,14 +1,12 @@
 package cs3500.pa01;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import cs3500.pa01.model.Created;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.attribute.BasicFileAttributeView;
 import java.nio.file.attribute.FileTime;
@@ -21,8 +19,8 @@ import org.junit.jupiter.api.Test;
  */
 class CreatedTest {
   Comparator<Path> comp;
-  String fake;
-  String fake2;
+  String path1;
+  String path2;
   File f1;
   File f2;
   Path p1;
@@ -37,16 +35,16 @@ class CreatedTest {
   @BeforeEach
   public void initData() {
     comp = new Created();
-    fake = "src/test/resources/exampleDirectory/oodNotes/fake.md";
-    fake2 = "src/test/resources/exampleDirectory/oodNotes/fake2.md";
+    path1 = "src/test/resources/exampleDirectory/Test1";
+    path2 = "src/test/resources/exampleDirectory/Test2";
     f1 = null;
     f2 = null;
 
     try {
       f1 = File.createTempFile("connor1",
-          ".md", new File("src/test/resources/exampleDirectory/Test1"));
+          ".md", new File(Path.of(path1).toUri()));
       f2 = File.createTempFile("connor2",
-          ".md", new File("src/test/resources/exampleDirectory/Test2"));
+          ".md", new File(Path.of(path2).toUri()));
       a1 = Files.getFileAttributeView(
           f1.toPath(), BasicFileAttributeView.class);
       a2 = Files.getFileAttributeView(

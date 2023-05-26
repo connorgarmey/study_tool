@@ -3,7 +3,6 @@ package cs3500.pa01;
 import static java.util.Arrays.asList;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import cs3500.pa01.model.Created;
 import cs3500.pa01.model.Sorter;
@@ -48,28 +47,6 @@ class SorterTest {
     list = new ArrayList<>(asList(p1, p2, p3));
     comp = new Created();
 
-    f1 = null;
-    f2 = null;
-
-    try {
-
-      f1 = File.createTempFile("connor1",
-          ".md", new File("src/test/resources/exampleDirectory/Test1"));
-      f2 = File.createTempFile("connor2",
-          ".md", new File("src/test/resources/exampleDirectory/Test2"));
-      a1 = Files.getFileAttributeView(
-          f1.toPath(), BasicFileAttributeView.class);
-      a2 = Files.getFileAttributeView(
-          f2.toPath(), BasicFileAttributeView.class);
-
-      long number = 34239;
-      FileTime time = FileTime.fromMillis(number);
-      a1.setTimes(time, time, time);
-      cp1 = Path.of(f1.toURI());
-      cp2 = Path.of(f2.toURI());
-    } catch (IOException e) {
-      System.err.println(e);
-    }
 
   }
 
@@ -99,16 +76,6 @@ class SorterTest {
         new ArrayList<>(asList(p2, p3, p1)).toArray());
   }
 
-  /**
-   * tests the created sort
-   */
-  @Test
-  public void testCreated() {
-
-    assertArrayEquals(sorter.getSortedFiles(
-            new ArrayList<>(asList(cp1, cp2)), "created").toArray(),
-        new ArrayList<>(asList(cp1, cp2)).toArray());
-  }
 
   /**
    * tests for invalid input
