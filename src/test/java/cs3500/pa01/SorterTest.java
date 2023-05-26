@@ -58,7 +58,7 @@ class SorterTest {
     try {
       f1 = File.createTempFile("connor1",
           ".md", new File("src/test/resources/exampleDirectory/Test1"));
-      f2 = File.createTempFile("stinky2",
+      f2 = File.createTempFile("connor2",
           ".md", new File("src/test/resources/exampleDirectory/Test2"));
       a1 = Files.getFileAttributeView(
           f1.toPath(), BasicFileAttributeView.class);
@@ -68,11 +68,12 @@ class SorterTest {
       long number = 34239;
       FileTime time = FileTime.fromMillis(number);
       a1.setTimes(time, time, time);
+      cp1 = Path.of(f1.toURI());
+      cp2 = Path.of(f2.toURI());
     } catch (IOException e) {
       System.err.println(e);
     }
-    cp1 = Path.of(f1.toURI());
-    cp2 = Path.of(f2.toURI());
+
   }
 
 
