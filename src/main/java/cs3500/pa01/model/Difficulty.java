@@ -5,5 +5,12 @@ package cs3500.pa01.model;
  * of hard or easy
  */
 public enum Difficulty {
-  EASY, HARD
+  /**
+   * Easy question field
+   */
+  EASY,
+  /**
+   * Hard question field
+   */
+  HARD
 }

@@ -7,5 +7,9 @@ import java.io.IOException;
  * an application of the program
  */
 public interface Icontroller {
-  void runApp() throws IOException;
+
+  /**
+   * method for running the app
+   */
+  void runApp();
 }

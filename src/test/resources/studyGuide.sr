@@ -6,7 +6,7 @@ tex: ASCII, UTF-8, etc... mp4, wav, jpeg, gif, png, svg…
 @EASY
 - What is object-oriented programming (OOP)? 
  Object-oriented programming is a programming paradigm that organizes code into objects, which are instances of classes. It emphasizes concepts such as encapsulation, inheritance, and polymorphism.
-@HARD
+@EASY
 - What is a class in Java? 
  In Java, a class is a blueprint or a template for creating objects. It defines the properties (attributes) and behaviors (methods) that objects of that class can have.
 @EASY
