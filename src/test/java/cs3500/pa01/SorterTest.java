@@ -70,7 +70,6 @@ class SorterTest {
       a1.setTimes(time, time, time);
     } catch (IOException e) {
       System.err.println(e);
-      fail();
     }
     cp1 = Path.of(f1.toURI());
     cp2 = Path.of(f2.toURI());

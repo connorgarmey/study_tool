@@ -36,15 +36,17 @@ class CreatedTest {
   @BeforeEach
   public void initData() {
     comp = new Created();
-    fake = Path.of("src/test/resources/exampleDirectory/oodNotes/fake.md");
-    fake2 = Path.of("src/test/resources/exampleDirectory/oodNotes/fake2.md");
+    fake = null;
+    fake2 = null;
     f1 = null;
     f2 = null;
 
     try {
+      fake = Path.of("src/test/resources/exampleDirectory/oodNotes/fake.md");
+      fake2 = Path.of("src/test/resources/exampleDirectory/oodNotes/fake2.md");
       f1 = File.createTempFile("connor1",
           ".md", new File("src/test/resources/exampleDirectory/Test1"));
-      f2 = File.createTempFile("stinky2",
+      f2 = File.createTempFile("connor2",
           ".md", new File("src/test/resources/exampleDirectory/Test2"));
       a1 = Files.getFileAttributeView(
           f1.toPath(), BasicFileAttributeView.class);
