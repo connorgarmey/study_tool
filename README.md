@@ -1,7 +1,7 @@
 ## Program Functions
 The app has two modes, a Study Guide Creator and a Spaced Repetition Study Session which are activated by providing the specified command-line arguments
 
-# The Study Guide Creator takes three (3) command-line arguments:
+### The Study Guide Creator takes three (3) command-line arguments:
 
 1. A relative or absolute path to a folder (directory) of markdown files containing the notes you want to summarize.  We will call this folder **notes-root**. 
     4. Example paths:
@@ -20,7 +20,7 @@ The app has two modes, a Study Guide Creator and a Spaced Repetition Study Sessi
         3. Bracketed phrases or sentences may span multiple lines of the input file. 
         4. A single line of the input file may contain multiple bracketed important phrases; each should be output as a separate bullet point in the study guide.
 
-# The Spaced Repetition study session progresses like this:
+### The Spaced Repetition study session progresses like this:
 
 1. The user provides a path to a `.sr` file that contains a set of questions and their associated metadata. We’ll call this the “question bank”. 
 2. The user indicates how many questions they would like to be presented in this study session. If the total number of questions in the question bank is smaller than the total number of questions the user wants to practice, they will be quizzed on all the questions in the file. 
