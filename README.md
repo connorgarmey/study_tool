@@ -11,7 +11,7 @@ The app has two modes, a Study Guide Creator and a Spaced Repetition Study Sessi
     1. `filename` - organize the content in the output summary file in order based on the alphabetically sorted source file names. 
     2. `created` - organize the content in the output summary file in order based on the create-date time stamp of the source file. 
     3. `modified` - organize the content in the output summary file in order based on the the last modified time stamp of the source file. 
-3. An output path (relative or absolute) and filename of where to write the study guide your program generates. Based on the input file processing order dictated by command-line argument #2 above, the output file will contain:
+3. An output path (relative or absolute) and filename of where to write the study guide the program generates. Based on the input file processing order dictated by command-line argument #2 above, the output file will contain:
     1. all headings in the order they appear in the file (properly nested). 
         1. Except for the very first line of the study guide file, all headings should be preceded with a blank line. 
     2. all important phrases identified with the `[[]]` properly nested under the heading in which it appears in the original input file. 
